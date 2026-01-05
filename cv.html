@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV | Jamal Mamkhezri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --ink: #1a1a1a; --paper: #faf9f7; --accent: #8b4513; --muted: #6b6b6b; --border: #e0ddd8; --highlight: #f5f3ef; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; line-height: 1.7; color: var(--ink); background: var(--paper); }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+        h1 { font-size: clamp(2rem, 4vw, 2.75rem); }
+        h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--accent); }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { opacity: 0.7; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+        nav { position: fixed; top: 0; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--border); z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; height: 70px; max-width: 1100px; }
+        .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--ink); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; }
+        .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--ink); }
+        .page-header { padding: 140px 0 60px; border-bottom: 1px solid var(--border); }
+        .page-header p { color: var(--muted); font-size: 1.1rem; margin-top: 0.5rem; }
+        .content { padding: 60px 0; }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--accent);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            margin-bottom: 3rem;
+            transition: background 0.3s ease;
+        }
+        .download-btn:hover { background: #6d3610; opacity: 1; }
+
+        .cv-section { margin-bottom: 3rem; }
+        .cv-section h2 { padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+
+        .cv-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+        .cv-item:last-child { border-bottom: none; }
+        .cv-item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem; }
+        .cv-item-title { font-weight: 600; }
+        .cv-item-date { color: var(--muted); font-size: 0.9rem; }
+        .cv-item-subtitle { color: var(--muted); font-size: 0.95rem; }
+        .cv-item-description { margin-top: 0.5rem; font-size: 0.95rem; }
+
+        .grants-list { list-style: none; }
+        .grants-list li { padding: 1rem 0; border-bottom: 1px solid var(--border); }
+        .grants-list li:last-child { border-bottom: none; }
+        .grant-title { font-weight: 500; margin-bottom: 0.25rem; }
+        .grant-details { font-size: 0.9rem; color: var(--muted); }
+        .grant-amount { color: var(--accent); font-weight: 600; }
+
+        footer { padding: 3rem 0; border-top: 1px solid var(--border); text-align: center; margin-top: 3rem; }
+        footer p { font-size: 0.9rem; color: var(--muted); }
+
+        @media (max-width: 768px) {
+            .nav-links { position: fixed; top: 70px; left: 0; right: 0; background: var(--paper); flex-direction: column; padding: 2rem; gap: 1.5rem; border-bottom: 1px solid var(--border); transform: translateY(-100%); opacity: 0; pointer-events: none; transition: all 0.3s ease; }
+            .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+            .nav-toggle { display: flex; }
+            .page-header { padding: 120px 0 40px; }
+            .cv-item-header { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="nav-logo">Jamal Mamkhezri</a>
+            <ul class="nav-links">
+                <li><a href="index.html#research">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="cv.html" class="active">CV</a></li>
+            </ul>
+            <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Curriculum Vitae</h1>
+            <p>Academic positions, education, grants, and professional activities</p>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="container">
+            
+            <a href="https://business.nmsu.edu/faculty-research/_documents/JAMALM_CV_Oct2022.pdf" class="download-btn" target="_blank">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Download Full CV (PDF)
+            </a>
+
+            <div class="cv-section">
+                <h2>Academic Positions</h2>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">Visiting Research Faculty</span>
+                        <span class="cv-item-date">2024–2025</span>
+                    </div>
+                    <div class="cv-item-subtitle">Energy Policy and Innovation Center (EPIcenter), Georgia Institute of Technology</div>
+                </div>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">Associate Professor of Economics & Chevron Endowed Professor</span>
+                        <span class="cv-item-date">2019–Present</span>
+                    </div>
+                    <div class="cv-item-subtitle">Department of Economics, Applied Statistics, and International Business, New Mexico State University</div>
+                </div>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">Associate Director, MA Economics Program</span>
+                        <span class="cv-item-date">2021–Present</span>
+                    </div>
+                    <div class="cv-item-subtitle">College of Business, New Mexico State University</div>
+                </div>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">Adjunct Faculty</span>
+                        <span class="cv-item-date">2018–2019</span>
+                    </div>
+                    <div class="cv-item-subtitle">University of New Mexico at Los Alamos</div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Education</h2>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">Ph.D. in Economics</span>
+                        <span class="cv-item-date">2019</span>
+                    </div>
+                    <div class="cv-item-subtitle">University of New Mexico</div>
+                    <div class="cv-item-description">Dissertation: "Market and Non-Market Valuation of Renewable Energy" — Defended with distinction</div>
+                </div>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">M.A. in Economics</span>
+                        <span class="cv-item-date">2016</span>
+                    </div>
+                    <div class="cv-item-subtitle">University of New Mexico</div>
+                </div>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">M.Sc. in Economics</span>
+                        <span class="cv-item-date">2013</span>
+                    </div>
+                    <div class="cv-item-subtitle">Allameh Tabatabai University, Iran</div>
+                </div>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">B.Sc. in Economics</span>
+                        <span class="cv-item-date">2011</span>
+                    </div>
+                    <div class="cv-item-subtitle">Urmia University, Iran</div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Professional Service</h2>
+                <div class="cv-item">
+                    <div class="cv-item-header">
+                        <span class="cv-item-title">Vice President for Academic Affairs</span>
+                        <span class="cv-item-date">Current</span>
+                    </div>
+                    <div class="cv-item-subtitle">United States Association for Energy Economics (USAEE) Executive Council</div>
+                    <div class="cv-item-description">Leading efforts to engage faculty and students from universities in the USAEE/IAEE annual conference.</div>
+                </div>
+            </div>
+
+            <div class="cv-section">
+                <h2>Selected Grants & Funded Projects</h2>
+                <ul class="grants-list">
+                    <li>
+                        <div class="grant-title">Solar Stakeholder Research</div>
+                        <div class="grant-details">U.S. Department of Energy & Lawrence Berkeley National Lab • <span class="grant-amount">Lead Investigator</span></div>
+                    </li>
+                    <li>
+                        <div class="grant-title">Pathway to Zero Natural Gas: Understanding the Transition from Natural Gas to Electric Appliances</div>
+                        <div class="grant-details">Los Alamos Department of Public Utilities • <span class="grant-amount">Lead Investigator</span></div>
+                    </li>
+                    <li>
+                        <div class="grant-title">The Role of CO2 Conversion in the Clean Energy Transition</div>
+                        <div class="grant-details">U.S. Department of Energy • <span class="grant-amount">Lead Investigator</span></div>
+                    </li>
+                    <li>
+                        <div class="grant-title">Assessing the Impact of Alternative Electric Vehicle Policy Scenarios on Human Behavior in New Mexico</div>
+                        <div class="grant-details">New Mexico ECMD of EMNRD • <span class="grant-amount">Lead Investigator</span></div>
+                    </li>
+                    <li>
+                        <div class="grant-title">Assessing the Economics and Environmental Impacts of Alternative Electric Vehicle Policy Scenarios in New Mexico</div>
+                        <div class="grant-details">NM EPSCoR SEED Award • <span class="grant-amount">$50,000</span> • 2021</div>
+                    </li>
+                    <li>
+                        <div class="grant-title">Interpreting and Implementing Results of Modeling the Impact of Energy Efficiency Programs</div>
+                        <div class="grant-details">Department of Energy, NM ECMD • <span class="grant-amount">$37,448</span> • 2021</div>
+                    </li>
+                    <li>
+                        <div class="grant-title">Modeling the Impact of Energy Efficiency Programs Across the NM Council of Government Districts</div>
+                        <div class="grant-details">Department of Energy, NM ECMD • <span class="grant-amount">$50,000</span> • 2020</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="cv-section">
+                <h2>Research Interests</h2>
+                <p style="color: var(--muted);">Energy Economics • Environmental Economics • Economic Valuation • Natural Resource Economics • System Dynamics Modeling • Health Economics • Input-Output Analysis • Experimental Economics</p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer><div class="container"><p>© 2025 Jamal Mamkhezri. All rights reserved.</p></div></footer>
+    <script>function toggleNav() { document.querySelector('.nav-links').classList.toggle('open'); }</script>
+</body>
+</html>

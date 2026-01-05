@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teaching | Jamal Mamkhezri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --ink: #1a1a1a; --paper: #faf9f7; --accent: #8b4513; --muted: #6b6b6b; --border: #e0ddd8; --highlight: #f5f3ef; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; line-height: 1.7; color: var(--ink); background: var(--paper); }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
+        h1 { font-size: clamp(2rem, 4vw, 2.75rem); }
+        h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--accent); }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { opacity: 0.7; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+        nav { position: fixed; top: 0; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--border); z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; height: 70px; max-width: 1100px; }
+        .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--ink); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; }
+        .nav-links a:hover, .nav-links a.active { color: var(--ink); }
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--ink); }
+        .page-header { padding: 140px 0 60px; border-bottom: 1px solid var(--border); }
+        .page-header p { color: var(--muted); font-size: 1.1rem; }
+        .content { padding: 60px 0; }
+        .teaching-philosophy { background: var(--highlight); padding: 2rem; margin-bottom: 3rem; border-left: 3px solid var(--accent); }
+        .teaching-philosophy p { font-size: 1.05rem; font-style: italic; }
+        .course-section { margin-bottom: 3rem; }
+        .course-section h2 { padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+        .course-grid { display: grid; gap: 1.5rem; }
+        .course-card { padding: 1.5rem; background: white; border: 1px solid var(--border); transition: border-color 0.3s ease; }
+        .course-card:hover { border-color: var(--accent); }
+        .course-code { font-size: 0.85rem; color: var(--accent); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem; }
+        .course-card h3 { margin-bottom: 0.5rem; font-size: 1.2rem; }
+        .course-card p { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.75rem; }
+        .course-details { font-size: 0.85rem; color: var(--muted); }
+        .course-details span { margin-right: 1rem; }
+        .teaching-history { margin-top: 3rem; }
+        .history-table { width: 100%; border-collapse: collapse; }
+        .history-table th, .history-table td { padding: 0.75rem 1rem; text-align: left; border-bottom: 1px solid var(--border); }
+        .history-table th { font-weight: 600; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--muted); background: var(--highlight); }
+        .history-table td { font-size: 0.95rem; }
+        .history-table tr:hover td { background: var(--highlight); }
+        footer { padding: 3rem 0; border-top: 1px solid var(--border); text-align: center; margin-top: 3rem; }
+        footer p { font-size: 0.9rem; color: var(--muted); }
+        @media (max-width: 768px) {
+            .nav-links { position: fixed; top: 70px; left: 0; right: 0; background: var(--paper); flex-direction: column; padding: 2rem; gap: 1.5rem; border-bottom: 1px solid var(--border); transform: translateY(-100%); opacity: 0; pointer-events: none; transition: all 0.3s ease; }
+            .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+            .nav-toggle { display: flex; }
+            .page-header { padding: 120px 0 40px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="nav-logo">Jamal Mamkhezri</a>
+            <ul class="nav-links">
+                <li><a href="index.html#research">Research</a></li>
+                <li><a href="publications.html">Publications</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="teaching.html" class="active">Teaching</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Teaching</h1>
+            <p>Courses at New Mexico State University and University of New Mexico</p>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="container">
+            <div class="teaching-philosophy">
+                <p>"I believe in making economics accessible and relevant. My teaching emphasizes real-world applications, critical thinking, and the connections between economic theory and pressing issues like energy policy, environmental sustainability, and public decision-making."</p>
+            </div>
+
+            <div class="course-section">
+                <h2>Courses at NMSU</h2>
+                <div class="course-grid">
+                    <div class="course-card">
+                        <div class="course-code">ECON 345</div>
+                        <h3>Energy Economics</h3>
+                        <p>Economic analysis of energy markets, including fossil fuels and renewables. Topics include market structure, pricing, environmental externalities, and energy policy.</p>
+                        <div class="course-details"><span>Undergraduate</span></div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-code">ECON 457</div>
+                        <h3>Mathematical Economics</h3>
+                        <p>Application of mathematical tools to economic analysis. Covers optimization, comparative statics, and dynamic models.</p>
+                        <div class="course-details"><span>Undergraduate/Graduate</span></div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-code">ECON 405</div>
+                        <h3>Introductory Econometrics</h3>
+                        <p>Statistical methods for economic research. Topics include regression analysis, hypothesis testing, and applications to economic data.</p>
+                        <div class="course-details"><span>Undergraduate</span></div>
+                    </div>
+                    <div class="course-card">
+                        <div class="course-code">ECON 2110G / 251G</div>
+                        <h3>Principles of Macroeconomics</h3>
+                        <p>Introduction to macroeconomic concepts including GDP, inflation, unemployment, monetary and fiscal policy.</p>
+                        <div class="course-details"><span>Undergraduate</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="teaching-history">
+                <h2>Teaching History</h2>
+                <table class="history-table">
+                    <thead>
+                        <tr><th>Course</th><th>Institution</th><th>Terms</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>ECON 457 Mathematical Economics</td><td>NMSU</td><td>Fall 2021, Fall 2022</td></tr>
+                        <tr><td>ECON 345 Energy Economics</td><td>NMSU</td><td>Fall 2019–Fall 2022</td></tr>
+                        <tr><td>ECON 405 Introductory Econometrics</td><td>NMSU</td><td>Spring 2021, Spring 2022</td></tr>
+                        <tr><td>ECON 2110G/251G Principles of Macroeconomics</td><td>NMSU</td><td>Fall 2019–Spring 2022</td></tr>
+                        <tr><td>ECON 105 Introductory Macroeconomics</td><td>UNM Los Alamos</td><td>Fall 2018, Spring 2019</td></tr>
+                        <tr><td>ECON 105 Introductory Macroeconomics</td><td>UNM</td><td>Spring 2018</td></tr>
+                        <tr><td>ECON 106 Introductory Microeconomics</td><td>UNM</td><td>Spring 2015 (Lab Instructor)</td></tr>
+                        <tr><td>ECON 360 History of Economic Thought</td><td>Payame Noor University, Iran</td><td>Spring 2014</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer><div class="container"><p>© 2025 Jamal Mamkhezri. All rights reserved.</p></div></footer>
+    <script>function toggleNav() { document.querySelector('.nav-links').classList.toggle('open'); }</script>
+</body>
+</html>

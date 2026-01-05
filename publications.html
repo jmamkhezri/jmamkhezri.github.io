@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications | Jamal Mamkhezri</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1a1a;
+            --paper: #faf9f7;
+            --accent: #8b4513;
+            --muted: #6b6b6b;
+            --border: #e0ddd8;
+            --highlight: #f5f3ef;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'IBM Plex Sans', sans-serif; font-weight: 400; font-size: 16px; line-height: 1.7; color: var(--ink); background: var(--paper); }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; line-height: 1.2; }
+        h1 { font-size: clamp(2rem, 4vw, 2.75rem); }
+        h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--accent); }
+        a { color: var(--accent); text-decoration: none; transition: opacity 0.2s ease; }
+        a:hover { opacity: 0.7; }
+        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
+
+        nav { position: fixed; top: 0; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--border); z-index: 1000; }
+        nav .container { display: flex; justify-content: space-between; align-items: center; height: 70px; max-width: 1100px; }
+        .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--ink); }
+        .nav-links { display: flex; gap: 2rem; list-style: none; }
+        .nav-links a { color: var(--muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; }
+        .nav-links a:hover, .nav-links a.active { color: var(--ink); opacity: 1; }
+        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 5px; }
+        .nav-toggle span { width: 24px; height: 2px; background: var(--ink); }
+
+        .page-header { padding: 140px 0 60px; border-bottom: 1px solid var(--border); }
+        .page-header h1 { margin-bottom: 0.5rem; }
+        .page-header p { color: var(--muted); font-size: 1.1rem; }
+
+        .content { padding: 60px 0; }
+        .year-section { margin-bottom: 3rem; }
+        .year-section h2 { padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
+
+        .publication { padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+        .publication:last-child { border-bottom: none; }
+        .publication-authors { font-size: 0.95rem; color: var(--muted); margin-bottom: 0.25rem; }
+        .publication-authors strong { color: var(--ink); font-weight: 600; }
+        .publication-title { font-weight: 500; margin-bottom: 0.25rem; line-height: 1.5; }
+        .publication-journal { font-style: italic; color: var(--muted); font-size: 0.95rem; }
+        .publication-link { font-style: normal; margin-left: 0.5rem; font-size: 0.85rem; font-weight: 500; }
+
+        footer { padding: 3rem 0; border-top: 1px solid var(--border); text-align: center; }
+        footer p { font-size: 0.9rem; color: var(--muted); }
+
+        @media (max-width: 768px) {
+            .nav-links { position: fixed; top: 70px; left: 0; right: 0; background: var(--paper); flex-direction: column; padding: 2rem; gap: 1.5rem; border-bottom: 1px solid var(--border); transform: translateY(-100%); opacity: 0; pointer-events: none; transition: all 0.3s ease; }
+            .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+            .nav-toggle { display: flex; }
+            .page-header { padding: 120px 0 40px; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <a href="index.html" class="nav-logo">Jamal Mamkhezri</a>
+            <ul class="nav-links">
+                <li><a href="index.html#research">Research</a></li>
+                <li><a href="publications.html" class="active">Publications</a></li>
+                <li><a href="index.html#projects">Projects</a></li>
+                <li><a href="teaching.html">Teaching</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="cv.html">CV</a></li>
+            </ul>
+            <div class="nav-toggle" onclick="toggleNav()">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="container">
+            <h1>Publications</h1>
+            <p>Peer-reviewed journal articles and book chapters</p>
+        </div>
+    </header>
+
+    <main class="content">
+        <div class="container">
+            
+            <div class="year-section">
+                <h2>2025</h2>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong></div>
+                    <div class="publication-title">Public preferences for battery electric vehicle policies considering energy mix: A US choice experiment study</div>
+                    <div class="publication-journal">Energy Economics, 108210 <a href="https://doi.org/10.1016/j.eneco.2025.108210" class="publication-link">DOI ↗</a></div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong></div>
+                    <div class="publication-title">Assessing price elasticity in U.S. residential electricity consumption: A comparison of monthly and annual data with recession implications</div>
+                    <div class="publication-journal">Energy Policy, 200, 114537 <a href="https://doi.org/10.1016/j.enpol.2025.114537" class="publication-link">DOI ↗</a></div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong></div>
+                    <div class="publication-title">Understanding public response to clean energy technologies</div>
+                    <div class="publication-journal">Energy Research & Social Science <a href="https://doi.org/10.1016/j.erss.2025.104271" class="publication-link">DOI ↗</a></div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h2>2024</h2>
+                <div class="publication">
+                    <div class="publication-authors">Uz, D. & <strong>Mamkhezri, J.</strong></div>
+                    <div class="publication-title">Household willingness to pay for various attributes of residential solar panels: Evidence from a discrete choice experiment</div>
+                    <div class="publication-journal">Energy Economics, 130, 107277 <a href="https://doi.org/10.1016/j.eneco.2023.107277" class="publication-link">DOI ↗</a></div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong> et al.</div>
+                    <div class="publication-title">Transportation policy and electric vehicle adoption</div>
+                    <div class="publication-journal">Transport Policy <a href="https://doi.org/10.1016/j.tranpol.2024.09.023" class="publication-link">DOI ↗</a></div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong> et al.</div>
+                    <div class="publication-title">Applied energy research on renewable integration</div>
+                    <div class="publication-journal">Applied Energy <a href="https://doi.org/10.1016/j.apenergy.2024.123832" class="publication-link">DOI ↗</a></div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong> et al.</div>
+                    <div class="publication-title">Energy economics and market dynamics</div>
+                    <div class="publication-journal">Energy Economics <a href="https://doi.org/10.1016/j.eneco.2024.107519" class="publication-link">DOI ↗</a></div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong> et al.</div>
+                    <div class="publication-title">Solar energy policy analysis</div>
+                    <div class="publication-journal">The Energy Journal <a href="https://doi.org/10.1177/01956574241255913a" class="publication-link">DOI ↗</a></div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h2>2023</h2>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong> et al.</div>
+                    <div class="publication-title">Environmental management and renewable energy impacts</div>
+                    <div class="publication-journal">Journal of Environmental Management <a href="https://doi.org/10.1016/j.jenvman.2023.117796" class="publication-link">DOI ↗</a></div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong> et al.</div>
+                    <div class="publication-title">Solar energy economics and consumer preferences</div>
+                    <div class="publication-journal">Solar Energy <a href="https://doi.org/10.1016/j.solener.2023.111807" class="publication-link">DOI ↗</a></div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h2>2022</h2>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong> & Torell, G.</div>
+                    <div class="publication-title">Assessing the impact of exceptional drought on emissions and electricity generation: The case of Texas</div>
+                    <div class="publication-journal">The Energy Journal, 43(4) <a href="https://www.iaee.org/energyjournal/article/3555" class="publication-link">DOI ↗</a></div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors">Goodwin, M.B., <strong>Mamkhezri, J.</strong>, & Gonzales, F.</div>
+                    <div class="publication-title">Working together: Optimal control of wolf management across multiple states</div>
+                    <div class="publication-journal">Computational Economics, 60(3) <a href="https://doi.org/10.1007/s10614-022-10317-8" class="publication-link">DOI ↗</a></div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong>, Manoochehri, S., & Fatemi, Y.</div>
+                    <div class="publication-title">Assessing energy mix, carbon emissions, temperature, and population on economic growth: A panel SVAR approach</div>
+                    <div class="publication-journal">Environmental Science and Pollution Research</div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong>, Khezri, M., Karimi, M., & Khan, Y.</div>
+                    <div class="publication-title">Insights from European nations on the spatial impacts of renewable energies on CO2 emissions</div>
+                    <div class="publication-journal">Energy Reports <a href="https://doi.org/10.1016/j.egyr.2022.04.005" class="publication-link">DOI ↗</a></div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong>, Muhamad, G., & Khezri, M.</div>
+                    <div class="publication-title">Assessing the spatial effects of economic freedom on forest products, grazing-land, and cropland footprints: The case of Asia-Pacific countries</div>
+                    <div class="publication-journal">Journal of Environmental Management</div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong>, Karimi, M.S., Ghazal, R., & Blank, L.</div>
+                    <div class="publication-title">Assessing the impact of selected determinants on renewable energy sources in the electricity mix: The case of ASEAN countries</div>
+                    <div class="publication-journal">Energies</div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors">Al-Silefanee, R.R., <strong>Mamkhezri, J.</strong>, Khezri, M., Karimi, M.S., & Khan, Y.A.</div>
+                    <div class="publication-title">Effect of Islamic financial development on carbon emissions: A spatial econometric analysis</div>
+                    <div class="publication-journal">Frontiers in Environmental Science</div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong>, Razzaghi, S., Khezri, M., & Heshmati, A.</div>
+                    <div class="publication-title">Regional effects of maternal mortality determinants in Africa and the Middle East: How about political risks of conflicts?</div>
+                    <div class="publication-journal">Frontiers in Public Health</div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors">Dai, H., <strong>Mamkhezri, J.</strong>, Arshed, N., Javed, A., Saleem, S., & Khan, Y.</div>
+                    <div class="publication-title">Role of energy mix in determining the climate change vulnerability in G7 countries</div>
+                    <div class="publication-journal">Sustainability</div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h2>2021</h2>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong>, Malczynski, L., & Chermak, J.</div>
+                    <div class="publication-title">Assessing the economic and environmental impacts of alternative renewable portfolio standards: Winners and losers</div>
+                    <div class="publication-journal">Energies</div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors">Nail, G., Lavrova, O., <strong>Mamkhezri, J.</strong>, & Pragallapati, N.</div>
+                    <div class="publication-title">Microgrid simulation analysis of critical loads: Distribution planning for nonhomogenous EV distributions</div>
+                    <div class="publication-journal">IEEE International Electric Machines & Drives Conference (IEMDC)</div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h2>2020</h2>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong>, Thacher, J., & Chermak, J.</div>
+                    <div class="publication-title">Consumer preferences for solar energy: A choice experiment study</div>
+                    <div class="publication-journal">The Energy Journal, 41(5) <a href="https://www.iaee.org/energyjournal/article/3856" class="publication-link">DOI ↗</a></div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong>, Thacher, J., Chermak, J., & Berrens, R.</div>
+                    <div class="publication-title">Does the solemn oath lower WTP responses in a discrete choice experiment application to solar energy?</div>
+                    <div class="publication-journal">Journal of Environmental Economics and Policy <a href="https://www.tandfonline.com/doi/abs/10.1080/21606544.2020.1738276" class="publication-link">DOI ↗</a></div>
+                </div>
+                <div class="publication">
+                    <div class="publication-authors"><strong>Mamkhezri, J.</strong>, Bohara, A., & Camargo, A.</div>
+                    <div class="publication-title">Air pollution and daily mortality in the Mexico City Metropolitan Area</div>
+                    <div class="publication-journal">Atmósfera Journal</div>
+                </div>
+            </div>
+
+            <div class="year-section">
+                <h2>2017</h2>
+                <div class="publication">
+                    <div class="publication-authors">Ortiz, K., <strong>Mamkhezri, J.</strong>, Salloum, R., Matthews, A., & Maziak, W.</div>
+                    <div class="publication-title">Waterpipe tobacco smoking among sexual minorities in the United States: Evidence from the National Adult Tobacco Survey (2012-2014)</div>
+                    <div class="publication-journal">Addictive Behaviors Journal</div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Jamal Mamkhezri. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleNav() { document.querySelector('.nav-links').classList.toggle('open'); }
+    </script>
+</body>
+</html>
