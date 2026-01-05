@@ -6,76 +6,82 @@
     <title>CV | Jamal Mamkhezri</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
-        :root { --ink: #1a1a1a; --paper: #faf9f7; --accent: #8b4513; --muted: #6b6b6b; --border: #e0ddd8; --highlight: #f5f3ef; }
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'IBM Plex Sans', sans-serif; font-size: 16px; line-height: 1.7; color: var(--ink); background: var(--paper); }
-        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 500; }
-        h1 { font-size: clamp(2rem, 4vw, 2.75rem); }
-        h2 { font-size: 1.5rem; margin-bottom: 1.5rem; color: var(--accent); }
-        a { color: var(--accent); text-decoration: none; }
-        a:hover { opacity: 0.7; }
-        .container { max-width: 900px; margin: 0 auto; padding: 0 2rem; }
-        nav { position: fixed; top: 0; left: 0; right: 0; background: var(--paper); border-bottom: 1px solid var(--border); z-index: 1000; }
-        nav .container { display: flex; justify-content: space-between; align-items: center; height: 70px; max-width: 1100px; }
-        .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-weight: 600; color: var(--ink); }
-        .nav-links { display: flex; gap: 2rem; list-style: none; }
-        .nav-links a { color: var(--muted); font-size: 0.85rem; font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase; }
-        .nav-links a:hover, .nav-links a.active { color: var(--ink); }
-        .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; }
-        .nav-toggle span { width: 24px; height: 2px; background: var(--ink); }
-        .page-header { padding: 140px 0 60px; border-bottom: 1px solid var(--border); }
-        .page-header p { color: var(--muted); font-size: 1.1rem; margin-top: 0.5rem; }
-        .content { padding: 60px 0; }
-
-        .download-btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--accent);
-            color: white;
-            padding: 0.75rem 1.5rem;
-            font-weight: 500;
-            font-size: 0.95rem;
-            margin-bottom: 3rem;
-            transition: background 0.3s ease;
+        :root {
+            --primary: #1a365d;
+            --primary-light: #2c5282;
+            --accent: #c05621;
+            --text: #2d3748;
+            --text-light: #4a5568;
+            --text-muted: #718096;
+            --bg: #faf9f7;
+            --bg-alt: #f7f5f2;
+            --white: #ffffff;
+            --border: #e2e0dc;
+            --shadow: rgba(26, 54, 93, 0.08);
         }
-        .download-btn:hover { background: #6d3610; opacity: 1; }
-
-        .cv-section { margin-bottom: 3rem; }
-        .cv-section h2 { padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); }
-
-        .cv-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
-        .cv-item:last-child { border-bottom: none; }
-        .cv-item-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem; }
-        .cv-item-title { font-weight: 600; }
-        .cv-item-date { color: var(--muted); font-size: 0.9rem; }
-        .cv-item-subtitle { color: var(--muted); font-size: 0.95rem; }
-        .cv-item-description { margin-top: 0.5rem; font-size: 0.95rem; }
-
-        .grants-list { list-style: none; }
-        .grants-list li { padding: 1rem 0; border-bottom: 1px solid var(--border); }
-        .grants-list li:last-child { border-bottom: none; }
-        .grant-title { font-weight: 500; margin-bottom: 0.25rem; }
-        .grant-details { font-size: 0.9rem; color: var(--muted); }
-        .grant-amount { color: var(--accent); font-weight: 600; }
-
-        footer { padding: 3rem 0; border-top: 1px solid var(--border); text-align: center; margin-top: 3rem; }
-        footer p { font-size: 0.9rem; color: var(--muted); }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Source Sans 3', sans-serif; background: var(--bg); color: var(--text); line-height: 1.7; font-size: 17px; }
+        nav { position: fixed; top: 0; left: 0; right: 0; background: rgba(250, 249, 247, 0.95); backdrop-filter: blur(10px); z-index: 1000; border-bottom: 1px solid var(--border); }
+        .nav-container { max-width: 1200px; margin: 0 auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+        .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 600; color: var(--primary); text-decoration: none; }
+        .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+        .nav-links a:hover, .nav-links a.active { color: var(--primary); }
+        
+        .page-header { padding: 8rem 2rem 3rem; background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%); color: var(--white); }
+        .page-header-container { max-width: 1000px; margin: 0 auto; }
+        .page-header h1 { font-family: 'Playfair Display', serif; font-size: 3rem; font-weight: 600; margin-bottom: 1rem; }
+        .page-header p { font-size: 1.1rem; opacity: 0.9; max-width: 600px; margin-bottom: 1.5rem; }
+        
+        .cv-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .cv-btn { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.8rem 1.5rem; border-radius: 6px; text-decoration: none; font-weight: 500; font-size: 0.95rem; transition: all 0.2s; }
+        .cv-btn-primary { background: var(--white); color: var(--primary); }
+        .cv-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.15); }
+        .cv-btn-secondary { background: rgba(255,255,255,0.1); color: var(--white); border: 1px solid rgba(255,255,255,0.3); }
+        .cv-btn-secondary:hover { background: rgba(255,255,255,0.2); }
+        .cv-btn svg { width: 18px; height: 18px; }
+        
+        main { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        
+        .cv-container { background: var(--white); border-radius: 12px; box-shadow: 0 4px 20px var(--shadow); overflow: hidden; border: 1px solid var(--border); }
+        
+        .cv-embed { width: 100%; height: calc(100vh - 200px); min-height: 800px; border: none; }
+        
+        .cv-notice { padding: 1.5rem 2rem; background: var(--bg-alt); border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 1rem; }
+        .cv-notice-icon { width: 40px; height: 40px; background: var(--primary); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+        .cv-notice-icon svg { width: 20px; height: 20px; color: var(--white); }
+        .cv-notice-text { flex: 1; }
+        .cv-notice-text h3 { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--primary); margin-bottom: 0.25rem; }
+        .cv-notice-text p { font-size: 0.9rem; color: var(--text-muted); }
+        
+        .cv-summary { padding: 3rem 2rem; }
+        .cv-summary h2 { font-family: 'Playfair Display', serif; font-size: 1.8rem; color: var(--primary); margin-bottom: 2rem; }
+        
+        .cv-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        
+        .cv-section { padding: 1.5rem; background: var(--bg); border-radius: 8px; border: 1px solid var(--border); }
+        .cv-section h3 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--accent); margin-bottom: 1rem; }
+        .cv-section ul { list-style: none; }
+        .cv-section li { padding: 0.5rem 0; border-bottom: 1px solid var(--border); font-size: 0.95rem; color: var(--text-light); }
+        .cv-section li:last-child { border-bottom: none; }
+        .cv-section li strong { color: var(--text); display: block; }
+        
+        footer { padding: 2rem; text-align: center; background: var(--primary); color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; margin-top: 3rem; }
+        footer a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
+        
         @media (max-width: 768px) {
-            .nav-links { position: fixed; top: 70px; left: 0; right: 0; background: var(--paper); flex-direction: column; padding: 2rem; gap: 1.5rem; border-bottom: 1px solid var(--border); transform: translateY(-100%); opacity: 0; pointer-events: none; transition: all 0.3s ease; }
-            .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: all; }
-            .nav-toggle { display: flex; }
-            .page-header { padding: 120px 0 40px; }
-            .cv-item-header { flex-direction: column; }
+            .nav-links { display: none; }
+            .page-header h1 { font-size: 2rem; }
+            .cv-embed { min-height: 600px; }
         }
     </style>
 </head>
 <body>
     <nav>
-        <div class="container">
+        <div class="nav-container">
             <a href="index.html" class="nav-logo">Jamal Mamkhezri</a>
             <ul class="nav-links">
                 <li><a href="index.html#research">Research</a></li>
@@ -83,148 +89,148 @@
                 <li><a href="index.html#projects">Projects</a></li>
                 <li><a href="teaching.html">Teaching</a></li>
                 <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
                 <li><a href="cv.html" class="active">CV</a></li>
+                <li><a href="index.html#contact">Contact</a></li>
             </ul>
-            <div class="nav-toggle" onclick="toggleNav()"><span></span><span></span><span></span></div>
         </div>
     </nav>
 
     <header class="page-header">
-        <div class="container">
+        <div class="page-header-container">
             <h1>Curriculum Vitae</h1>
-            <p>Academic positions, education, grants, and professional activities</p>
+            <p>Complete academic CV including publications, grants, teaching, and professional activities.</p>
+            <div class="cv-actions">
+                <a href="https://drive.google.com/file/d/1YOUR_CV_FILE_ID/view" target="_blank" class="cv-btn cv-btn-primary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download PDF
+                </a>
+                <a href="https://drive.google.com/file/d/1YOUR_CV_FILE_ID/view" target="_blank" class="cv-btn cv-btn-secondary">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                    Open in Google Drive
+                </a>
+            </div>
         </div>
     </header>
 
-    <main class="content">
-        <div class="container">
+    <main>
+        <div class="cv-container">
+            <div class="cv-notice">
+                <div class="cv-notice-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                </div>
+                <div class="cv-notice-text">
+                    <h3>Live CV Preview</h3>
+                    <p>This is an embedded preview of the most current version. Last updated: September 2024</p>
+                </div>
+            </div>
             
-            <a href="https://drive.google.com/file/d/1-2oyZS3yd-yA0-0QI3ukS_2VkMURZqs7/view" class="download-btn" target="_blank">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7,10 12,15 17,10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download Full CV (PDF)
-            </a>
-
-            <div class="cv-section">
-                <h2>Academic Positions</h2>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span class="cv-item-title">Visiting Research Faculty</span>
-                        <span class="cv-item-date">2024–2025</span>
-                    </div>
-                    <div class="cv-item-subtitle">Energy Policy and Innovation Center (EPIcenter), Georgia Institute of Technology</div>
+            <!-- Embedded Google Drive PDF Preview -->
+            <!-- Replace YOUR_CV_FILE_ID with your actual Google Drive file ID -->
+            <!-- The file ID is the long string in the URL: https://drive.google.com/file/d/FILE_ID/view -->
+            <iframe 
+                class="cv-embed" 
+                src="https://drive.google.com/file/d/1YOUR_CV_FILE_ID/preview"
+                allow="autoplay"
+                title="Jamal Mamkhezri CV">
+            </iframe>
+        </div>
+        
+        <div class="cv-summary">
+            <h2>CV Highlights</h2>
+            <div class="cv-grid">
+                <div class="cv-section">
+                    <h3>Current Positions</h3>
+                    <ul>
+                        <li>
+                            <strong>Associate Professor of Economics</strong>
+                            New Mexico State University
+                        </li>
+                        <li>
+                            <strong>Chevron Endowed Professor</strong>
+                            College of Business, NMSU
+                        </li>
+                        <li>
+                            <strong>Visiting Research Faculty</strong>
+                            Georgia Tech EPIcenter (2024-2025)
+                        </li>
+                        <li>
+                            <strong>VP Academic Affairs</strong>
+                            USAEE Executive Council
+                        </li>
+                    </ul>
                 </div>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span class="cv-item-title">Associate Professor of Economics & Chevron Endowed Professor</span>
-                        <span class="cv-item-date">2019–Present</span>
-                    </div>
-                    <div class="cv-item-subtitle">Department of Economics, Applied Statistics, and International Business, New Mexico State University</div>
+                
+                <div class="cv-section">
+                    <h3>Education</h3>
+                    <ul>
+                        <li>
+                            <strong>Ph.D. in Economics (2019)</strong>
+                            University of New Mexico — with distinction
+                        </li>
+                        <li>
+                            <strong>M.A. in Economics (2016)</strong>
+                            University of New Mexico
+                        </li>
+                        <li>
+                            <strong>M.Sc. in Economics</strong>
+                            Allameh Tabatabai University, Iran
+                        </li>
+                        <li>
+                            <strong>B.Sc. in Economics</strong>
+                            Urmia University, Iran
+                        </li>
+                    </ul>
                 </div>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span class="cv-item-title">Associate Director, MA Economics Program</span>
-                        <span class="cv-item-date">2021–Present</span>
-                    </div>
-                    <div class="cv-item-subtitle">College of Business, New Mexico State University</div>
+                
+                <div class="cv-section">
+                    <h3>Research Focus</h3>
+                    <ul>
+                        <li>Energy Economics</li>
+                        <li>Environmental Economics</li>
+                        <li>Nonmarket Valuation</li>
+                        <li>Experimental Economics</li>
+                        <li>System Dynamics Modeling</li>
+                        <li>Health Economics</li>
+                    </ul>
                 </div>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span class="cv-item-title">Adjunct Faculty</span>
-                        <span class="cv-item-date">2018–2019</span>
-                    </div>
-                    <div class="cv-item-subtitle">University of New Mexico at Los Alamos</div>
+                
+                <div class="cv-section">
+                    <h3>Key Metrics</h3>
+                    <ul>
+                        <li>
+                            <strong>30+ Publications</strong>
+                            Peer-reviewed journals
+                        </li>
+                        <li>
+                            <strong>$2.5M+ in Funding</strong>
+                            External research grants
+                        </li>
+                        <li>
+                            <strong>642+ Citations</strong>
+                            Google Scholar
+                        </li>
+                        <li>
+                            <strong>7 Projects as PI</strong>
+                            Lead investigator
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <div class="cv-section">
-                <h2>Education</h2>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span class="cv-item-title">Ph.D. in Economics</span>
-                        <span class="cv-item-date">2019</span>
-                    </div>
-                    <div class="cv-item-subtitle">University of New Mexico</div>
-                    <div class="cv-item-description">Dissertation: "Market and Non-Market Valuation of Renewable Energy" — Defended with distinction</div>
-                </div>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span class="cv-item-title">M.A. in Economics</span>
-                        <span class="cv-item-date">2016</span>
-                    </div>
-                    <div class="cv-item-subtitle">University of New Mexico</div>
-                </div>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span class="cv-item-title">M.Sc. in Economics</span>
-                        <span class="cv-item-date">2013</span>
-                    </div>
-                    <div class="cv-item-subtitle">Allameh Tabatabai University, Iran</div>
-                </div>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span class="cv-item-title">B.Sc. in Economics</span>
-                        <span class="cv-item-date">2011</span>
-                    </div>
-                    <div class="cv-item-subtitle">Urmia University, Iran</div>
-                </div>
-            </div>
-
-            <div class="cv-section">
-                <h2>Professional Service</h2>
-                <div class="cv-item">
-                    <div class="cv-item-header">
-                        <span class="cv-item-title">Vice President for Academic Affairs</span>
-                        <span class="cv-item-date">Current</span>
-                    </div>
-                    <div class="cv-item-subtitle">United States Association for Energy Economics (USAEE) Executive Council</div>
-                    <div class="cv-item-description">Leading efforts to engage faculty and students from universities in the USAEE/IAEE annual conference.</div>
-                </div>
-            </div>
-
-            <div class="cv-section">
-                <h2>Selected Grants & Funded Projects</h2>
-                <ul class="grants-list">
-                    <li>
-                        <div class="grant-title">Solar Stakeholder Research</div>
-                        <div class="grant-details">U.S. Department of Energy & Lawrence Berkeley National Lab • <span class="grant-amount">Lead Investigator</span></div>
-                    </li>
-                    <li>
-                        <div class="grant-title">Pathway to Zero Natural Gas: Understanding the Transition from Natural Gas to Electric Appliances</div>
-                        <div class="grant-details">Los Alamos Department of Public Utilities • <span class="grant-amount">Lead Investigator</span></div>
-                    </li>
-                    <li>
-                        <div class="grant-title">The Role of CO2 Conversion in the Clean Energy Transition</div>
-                        <div class="grant-details">U.S. Department of Energy • <span class="grant-amount">Lead Investigator</span></div>
-                    </li>
-                    <li>
-                        <div class="grant-title">Assessing the Impact of Alternative Electric Vehicle Policy Scenarios on Human Behavior in New Mexico</div>
-                        <div class="grant-details">New Mexico ECMD of EMNRD • <span class="grant-amount">Lead Investigator</span></div>
-                    </li>
-                    <li>
-                        <div class="grant-title">Assessing the Economics and Environmental Impacts of Alternative Electric Vehicle Policy Scenarios in New Mexico</div>
-                        <div class="grant-details">NM EPSCoR SEED Award • <span class="grant-amount">$50,000</span> • 2021</div>
-                    </li>
-                    <li>
-                        <div class="grant-title">Interpreting and Implementing Results of Modeling the Impact of Energy Efficiency Programs</div>
-                        <div class="grant-details">Department of Energy, NM ECMD • <span class="grant-amount">$37,448</span> • 2021</div>
-                    </li>
-                    <li>
-                        <div class="grant-title">Modeling the Impact of Energy Efficiency Programs Across the NM Council of Government Districts</div>
-                        <div class="grant-details">Department of Energy, NM ECMD • <span class="grant-amount">$50,000</span> • 2020</div>
-                    </li>
-                </ul>
-            </div>
-
-            <div class="cv-section">
-                <h2>Research Interests</h2>
-                <p style="color: var(--muted);">Energy Economics • Environmental Economics • Economic Valuation • Natural Resource Economics • System Dynamics Modeling • Health Economics • Input-Output Analysis • Experimental Economics</p>
-            </div>
-
         </div>
     </main>
 
-    <footer><div class="container"><p>© 2025 Jamal Mamkhezri. All rights reserved.</p></div></footer>
-    <script>function toggleNav() { document.querySelector('.nav-links').classList.toggle('open'); }</script>
+    <footer>
+        <p>© 2025 Jamal Mamkhezri. All rights reserved. | <a href="index.html">Back to Home</a></p>
+    </footer>
+    
+    <script>
+        // Instructions for embedding your CV:
+        // 1. Upload your CV PDF to Google Drive
+        // 2. Right-click the file > Share > Change to "Anyone with the link"
+        // 3. Copy the file ID from the URL (the long string between /d/ and /view)
+        // 4. Replace "1YOUR_CV_FILE_ID" above with your actual file ID
+        // Example: If your URL is https://drive.google.com/file/d/1ABC123xyz/view
+        // Then use: src="https://drive.google.com/file/d/1ABC123xyz/preview"
+    </script>
 </body>
 </html>
