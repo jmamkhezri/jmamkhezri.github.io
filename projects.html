@@ -171,7 +171,23 @@
             border-radius: 20px;
             font-weight: 500;
         }
-        
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #ffffff;
+            background: var(--accent);
+            text-decoration: none;
+            padding: 0.55rem 1.1rem;
+            border-radius: 6px;
+            transition: background 0.2s, transform 0.2s;
+        }
+        .project-link:hover { background: #9c4419; transform: translateY(-1px); }
+
         /* Footer */
         footer { padding: 2rem; text-align: center; background: var(--primary); color: rgba(255, 255, 255, 0.6); font-size: 0.9rem; }
         footer a { color: rgba(255, 255, 255, 0.8); text-decoration: none; }
@@ -279,6 +295,7 @@
                         <span class="project-tag">Public Perception</span>
                         <span class="project-tag">Electric Load</span>
                     </div>
+                    <a href="https://unm-eel.github.io/ladpu/" target="_blank" rel="noopener" class="project-link">Interactive Tools ↗</a>
                 </div>
             </article>
             
