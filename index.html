@@ -101,9 +101,10 @@
         /* Consulting Section */
         .consulting-section { background: var(--white); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
         .consulting-intro { color: var(--text-light); max-width: 820px; margin: -1.5rem 0 2.5rem; }
-        .consulting-note { color: var(--text-light); margin-top: 2.5rem; }
-        .consulting-note a { color: var(--primary-light); text-decoration: none; }
-        .consulting-note a:hover { text-decoration: underline; }
+        .consulting-intro p { margin-bottom: 1rem; }
+        .consulting-intro p:last-child { margin-bottom: 0; }
+        .consulting-cta { display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; margin-top: 2.5rem; }
+        .consulting-cta .view-all-link { margin-top: 0; }
 
         /* About Section */
         .about-content { display: grid; grid-template-columns: 2fr 1fr; gap: 4rem; }
@@ -382,7 +383,10 @@
                 <span class="section-number">04</span>
                 <h2 class="section-title">Consulting</h2>
             </div>
-            <p class="consulting-intro">Alongside my academic work, I provide economic consulting and expert witness services through Mamkhezri Consulting LLC, based in Las Cruces, New Mexico. Recent engagements include serving as a testifying expert in electric utility rate proceedings before the New Mexico Public Regulation Commission and as a retained economic expert in civil litigation in New Mexico state courts.</p>
+            <div class="consulting-intro">
+                <p>Alongside my academic work, I provide economic consulting and expert witness services through Mamkhezri Consulting LLC, based in Las Cruces, New Mexico. I am a Ph.D. economist, Chevron Endowed Professor of Economics at New Mexico State University, and Associate Director of NMSU's Center for Public Utilities, with more than 30 peer-reviewed publications on electricity markets, rate design, and consumer energy preferences in journals including <em>Energy Economics</em>, <em>Energy Policy</em>, and <em>The Energy Journal</em>.</p>
+                <p>Recent engagements include serving as a testifying expert in electric utility rate proceedings before the New Mexico Public Regulation Commission and as a retained economic expert in civil litigation in New Mexico state courts.</p>
+            </div>
             <div class="research-grid">
                 <div class="research-card">
                     <h3>Energy &amp; Utility Regulation</h3>
@@ -393,7 +397,16 @@
                     <p>Forensic economics for civil litigation: lost earning capacity, household services, and present-value analysis of economic damages, along with econometric and statistical analysis and review of opposing expert reports.</p>
                 </div>
             </div>
-            <p class="consulting-note">For consulting inquiries, contact <a href="mailto:jmamkhezri@gmail.com">jmamkhezri@gmail.com</a>.</p>
+            <div class="consulting-cta">
+                <a href="mailto:jmamkhezri@gmail.com" class="view-all-link">
+                    Consulting Inquiries
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </a>
+                <a href="Mamkhezri_Consulting_Resume.pdf" target="_blank" class="hero-link">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Consulting Resume (PDF)
+                </a>
+            </div>
         </div>
     </section>
 
