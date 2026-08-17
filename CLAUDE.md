@@ -29,5 +29,5 @@ NOTE: this repository is PUBLIC. Never put private information in it, including 
 ## Other notes
 
 - Jamal returned to NMSU (College of Business, Room BC 338) in summer 2026 after a 2025–2026 sabbatical at Georgia Tech's EPIcenter; the site should not describe Georgia Tech as a current affiliation.
-- Promotion to Full Professor is effective August 2026; the hero currently says "Professor (effective Aug. 2026)". After that date the qualifier can be dropped site-wide.
+- Promotion to Full Professor took effect August 2026; the "(effective Aug. 2026)" qualifier was removed from the hero on 2026-08-17, so the title now reads "Professor & Chevron Endowed Professor".
 - Design reference consulted for the consulting section: tahoeconomics.com (a colleague's consulting site). The takeaways adopted were content ideas (credibility bio, clear CTA, eventually a client/engagement list), not its design.
