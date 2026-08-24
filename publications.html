@@ -184,7 +184,7 @@
         <div class="stats-banner">
             <div class="stat-item"><div class="stat-number">34</div><div class="stat-label">Publications</div></div>
             <div class="stat-item"><div class="stat-number">16</div><div class="stat-label">Under Review</div></div>
-            <div class="stat-item"><div class="stat-number">900+</div><div class="stat-label">Citations</div></div>
+            <div class="stat-item"><div class="stat-number" id="citation-count">900+</div><div class="stat-label">Citations</div></div>
         </div>
         
         <div class="legend">
@@ -834,6 +834,19 @@
     </footer>
 
     <script>
+        // Citation count is refreshed daily from Google Scholar by
+        // .github/workflows/scholar-citations.yml. If the fetch fails the
+        // hardcoded fallback in the markup stays put.
+        fetch('citations.json', { cache: 'no-cache' })
+            .then(response => response.ok ? response.json() : Promise.reject(response.status))
+            .then(data => {
+                if (!data || typeof data.citations !== 'number') return;
+                const tile = document.getElementById('citation-count');
+                tile.textContent = data.citations.toLocaleString();
+                if (data.updated) tile.title = 'Google Scholar, updated ' + data.updated;
+            })
+            .catch(() => {});
+
         function toggleSection(header) {
             header.classList.toggle('active');
             const content = header.nextElementSibling;
