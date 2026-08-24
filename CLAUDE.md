@@ -26,6 +26,14 @@ NOTE: this repository is PUBLIC. Never put private information in it, including 
 - Engagement publishing policy: the site describes consulting work generically (venues and subject matter only). Specific clients, cases, and docket numbers are added only when they are public record AND Jamal explicitly approves. As of July 2026 no engagement specifics appear because active matters are still pending. The planned format for later is a "Representative engagements" list inside the consulting section, and possibly a dedicated `consulting.html` page once there is enough public material (filed testimony, client list) to fill one.
 - Detailed engagement notes live locally in Jamal's OneDrive CONSULTING folder, not in this repo. Do not copy from there into this repo without checking sensitivity.
 
+## Citation count (standing instruction)
+
+Every time Jamal asks for a website update, refresh the Google Scholar citation count as part of the same change, without being asked separately. Run `python3 scripts/fetch_citations.py` from this repo, then commit the resulting `citations.json` alongside whatever else changed.
+
+The script reads the public profile for Scholar ID `5dfoO-AAAAAJ`, tries the `scholarly` package first and falls back to parsing the profile page, refuses to write a lower number than the one already stored, and exits 0 without touching the file if Google cannot be reached. `publications.html` fetches `citations.json` at page load and fills the Citations tile, falling back to the hardcoded value in the markup if the file is missing.
+
+This runs from Jamal's Mac and not from CI on purpose: Google returns 403 to GitHub Actions runners. A scheduled workflow was tried on 2026-08-24 and blocked on its first run, so it was removed. If server-side scheduling is ever wanted, SerpApi's Scholar Author API is the route that works from a datacenter IP, and it needs a free account plus a repo secret.
+
 ## Other notes
 
 - Jamal returned to NMSU (College of Business, Room BC 338) in summer 2026 after a 2025–2026 sabbatical at Georgia Tech's EPIcenter; the site should not describe Georgia Tech as a current affiliation.

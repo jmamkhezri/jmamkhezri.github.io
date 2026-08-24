@@ -834,9 +834,9 @@
     </footer>
 
     <script>
-        // Citation count is refreshed daily from Google Scholar by
-        // .github/workflows/scholar-citations.yml. If the fetch fails the
-        // hardcoded fallback in the markup stays put.
+        // Citation count comes from citations.json, refreshed from Google
+        // Scholar by scripts/fetch_citations.py on each site update. If the
+        // fetch fails the hardcoded fallback in the markup stays put.
         fetch('citations.json', { cache: 'no-cache' })
             .then(response => response.ok ? response.json() : Promise.reject(response.status))
             .then(data => {

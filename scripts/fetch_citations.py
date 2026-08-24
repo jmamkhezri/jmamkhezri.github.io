@@ -1,9 +1,12 @@
 """Fetch the Google Scholar citation count and write it to citations.json.
 
-Run daily by .github/workflows/scholar-citations.yml. Google blocks automated
-requests from datacenter IPs fairly often, so a failed fetch is not an error:
-the script leaves the existing citations.json untouched and exits 0, and the
-site keeps showing the last good number.
+Run this from Jamal's Mac as part of every site update: python3
+scripts/fetch_citations.py, then commit citations.json alongside the other
+changes. It cannot run from GitHub Actions, because Google returns 403 to
+datacenter IPs; a residential IP works fine.
+
+A failed fetch is not an error. The script leaves the existing citations.json
+untouched and exits 0, so the site keeps showing the last good number.
 """
 
 import json
@@ -32,6 +35,8 @@ def log(message):
 
 
 def via_scholarly():
+    """Fallback: only used if the profile page request is refused. Needs
+    `pip install scholarly`, which is not installed by default."""
     from scholarly import scholarly
 
     author = scholarly.search_author_id(SCHOLAR_ID)
@@ -52,7 +57,7 @@ def via_profile_page():
 
 def main():
     citations = None
-    for source in (via_scholarly, via_profile_page):
+    for source in (via_profile_page, via_scholarly):
         try:
             citations = source()
             log(f"Fetched {citations} citations via {source.__name__}.")
