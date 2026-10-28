@@ -39,3 +39,8 @@ This runs from Jamal's Mac and not from CI on purpose: Google returns 403 to Git
 - Jamal returned to NMSU (College of Business, Room BC 338) in summer 2026 after a 2025–2026 sabbatical at Georgia Tech's EPIcenter; the site should not describe Georgia Tech as a current affiliation.
 - Promotion to Full Professor took effect August 2026; the "(effective Aug. 2026)" qualifier was removed from the hero on 2026-08-17, so the title now reads "Professor & Chevron Endowed Professor".
 - Design reference consulted for the consulting section: tahoeconomics.com (a colleague's consulting site). The takeaways adopted were content ideas (credibility bio, clear CTA, eventually a client/engagement list), not its design.
+
+## CV source (standing reference)
+
+- Current CV PDF: `/Users/jamalm/Library/CloudStorage/GoogleDrive-khezri.jamal@gmail.com/My Drive/Resume/JM_CV_Oct2026_LaTeX.pdf` (LaTeX source `JM_CV_Oct2026_LaTeX.tex` in the same folder). `cv.html` embeds and links Google Drive copies of the CV; bump its "Last updated" line whenever the CV changes.
+- Roles as of Oct 2026: Chevron Endowed Professor (Fall 2024 to current); Graduate Director, MA Economics & PURE Program, and Associate Director, Center for Public Utilities (both from Fall 2026). The old MA Economics Program Associate Director title is retired.
